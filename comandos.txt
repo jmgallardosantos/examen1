@@ -1,0 +1,14 @@
+php -S 127.0.0.1:8080
+npx tailwindcss -i ./src/input.css -o ./public/css/output.css --watch
+
+composer install
+npm install
+
+psql -h localhost -d citasphps -U citasphps<src/citasphp.sql
+
+sudo -u postgres createuser -P citasphp
+sudo -u postgres createdb -O citasphp citasphp
+
+
+psql -h localhost -d juguetes -U juguetes
+
